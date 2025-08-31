@@ -1,0 +1,41 @@
+name: Sync CV to Website
+
+on:
+  push:
+    paths:
+      - 'en_photo/cv.pdf'
+      - 'pt_photo/cv.pdf'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout cv repo
+        uses: actions/checkout@v3
+      
+      - name: Clone target repo
+        run: |
+          git clone https://github.com/a104437ana/a104437ana.github.io.git target-repo
+      
+      - name: Copy files and commit
+        run: |
+          cp en_photo/cv.pdf target-repo/assets/cv/en/cv.pdf
+          cp pt_photo/cv.pdf target-repo/assets/cv/pt/cv.pdf
+
+          cd target-repo
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/cv/en/cv.pdf assets/cv/pt/cv.pdf
+
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update CVs"
+            git push origin main
+          fi
