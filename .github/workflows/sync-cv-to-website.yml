@@ -18,10 +18,14 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Clone target repo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git clone https://github.com/a104437ana/a104437ana.github.io.git target-repo
+          git clone https://x-access-token:${GH_TOKEN}@github.com/a104437ana/a104437ana.github.io.git target-repo
       
       - name: Copy files and commit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cp en_photo/cv.pdf target-repo/assets/cv/en/cv.pdf
           cp pt_photo/cv.pdf target-repo/assets/cv/pt/cv.pdf
@@ -37,5 +41,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update CVs"
-            git push origin main
+            git push https://x-access-token:${GH_TOKEN}@github.com/a104437ana/a104437ana.github.io.git main
           fi
