@@ -7,7 +7,7 @@ on:
       - 'pt_photo/cv.pdf'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   sync:
@@ -19,17 +19,19 @@ jobs:
       
       - name: Clone target repo
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAT: ${{ secrets.PAT_FOR_CV_SYNC }}
         run: |
-          git clone https://x-access-token:${GH_TOKEN}@github.com/a104437ana/a104437ana.github.io.git target-repo
+          git clone https://x-access-token:${PAT}@github.com/a104437ana/a104437ana.github.io.git target-repo
       
-      - name: Copy files and commit
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy files
         run: |
           cp en_photo/cv.pdf target-repo/assets/cv/en/cv.pdf
           cp pt_photo/cv.pdf target-repo/assets/cv/pt/cv.pdf
 
+      - name: Commit and push changes
+        env:
+          PAT: ${{ secrets.PAT_FOR_CV_SYNC }}
+        run: |
           cd target-repo
 
           git config user.name "github-actions[bot]"
@@ -41,5 +43,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update CVs"
-            git push https://x-access-token:${GH_TOKEN}@github.com/a104437ana/a104437ana.github.io.git main
+            git push https://x-access-token:${PAT}@github.com/a104437ana/a104437ana.github.io.git main
           fi
