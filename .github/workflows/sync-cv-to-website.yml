@@ -3,8 +3,9 @@ name: Sync CV to Website
 on:
   push:
     paths:
-      - 'en_photo/cv.pdf'
-      - 'pt_photo/cv.pdf'
+      - 'cvs/en_photo/cv.pdf'
+      - 'cvs/pt_photo/cv.pdf'
+      - 'cvs/img/cv.png'
 
 permissions:
   contents: read
@@ -25,8 +26,9 @@ jobs:
       
       - name: Copy files
         run: |
-          cp en_photo/cv.pdf target-repo/assets/cv/en/cv.pdf
-          cp pt_photo/cv.pdf target-repo/assets/cv/pt/cv.pdf
+          cp cvs/en_photo/cv.pdf target-repo/assets/cv/en/cv.pdf
+          cp cvs/pt_photo/cv.pdf target-repo/assets/cv/pt/cv.pdf
+          cp cvs/img/cv.png target-repo/assets/img/cv.png
 
       - name: Commit and push changes
         env:
