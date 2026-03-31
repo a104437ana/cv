@@ -3,10 +3,10 @@
 
 This repository contains my **Curriculum Vitae**, created and maintained using LaTeX.
 I’ve prepared different versions to suit various needs:
-- [English, without photo](en_no_photo/cv.pdf);
-- [English, with photo](en_photo/cv.pdf);
-- [Portuguese, without photo](pt_no_photo/cv.pdf);
-- [Portuguese, with photo](pt_photo/cv.pdf).
+- [English, without photo](cvs/en_no_photo/cv.pdf);
+- [English, with photo](cvs/en_photo/cv.pdf);
+- [Portuguese, without photo](cvs/pt_no_photo/cv.pdf);
+- [Portuguese, with photo](cvs/pt_photo/cv.pdf).
 
 This project mantains several versions of my CV, that I find useful for different purposes. Versions with or without photo, in English or Portuguese, more general or more specific.
 
