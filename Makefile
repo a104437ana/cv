@@ -5,28 +5,28 @@ LATEX=pdflatex
 all: pt_photo pt_no_photo en_photo en_no_photo pt_photo_specific pt_no_photo_specific en_photo_specific en_no_photo_specific img
 
 pt_photo:
-	cd cvs/pt_photo && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/pt_photo && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 pt_no_photo:
-	cd cvs/pt_no_photo && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/pt_no_photo && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 en_photo:
-	cd cvs/en_photo && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/en_photo && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 en_no_photo:
-	cd cvs/en_no_photo && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/en_no_photo && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 pt_photo_specific:
-	cd cvs/pt_photo_specific && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/pt_photo_specific && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 pt_no_photo_specific:
-	cd cvs/pt_no_photo_specific && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/pt_no_photo_specific && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 en_photo_specific:
-	cd cvs/en_photo_specific && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/en_photo_specific && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 en_no_photo_specific:
-	cd cvs/en_no_photo_specific && $(LATEX) cv.tex && $(LATEX) cv.tex && $(LATEX) cv.tex
+	cd cvs/en_no_photo_specific && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex && $(LATEX) Ana_Sa_Oliveira_CV.tex
 
 img:
 	python3 convert_pdf_to_image.py

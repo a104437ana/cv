@@ -3,9 +3,9 @@ name: Sync CV to Website
 on:
   push:
     paths:
-      - 'cvs/en_photo/cv.pdf'
-      - 'cvs/pt_photo/cv.pdf'
-      - 'cvs/img/cv.png'
+      - 'cvs/en_photo/Ana_Sa_Oliveira_CV.pdf'
+      - 'cvs/pt_photo/Ana_Sa_Oliveira_CV.pdf'
+      - 'cvs/img/Ana_Sa_Oliveira_CV.png'
 
 permissions:
   contents: read
@@ -26,9 +26,9 @@ jobs:
       
       - name: Copy files
         run: |
-          cp cvs/en_photo/cv.pdf target-repo/assets/cv/en/cv.pdf
-          cp cvs/pt_photo/cv.pdf target-repo/assets/cv/pt/cv.pdf
-          cp cvs/img/cv.png target-repo/assets/img/cv.png
+          cp cvs/en_photo/Ana_Sa_Oliveira_CV.pdf target-repo/assets/cv/en/Ana_Sa_Oliveira_CV.pdf
+          cp cvs/pt_photo/Ana_Sa_Oliveira_CV.pdf target-repo/assets/cv/pt/Ana_Sa_Oliveira_CV.pdf
+          cp cvs/img/Ana_Sa_Oliveira_CV.png target-repo/assets/img/Ana_Sa_Oliveira_CV.png
 
       - name: Commit and push changes
         env:
@@ -39,7 +39,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/cv/en/cv.pdf assets/cv/pt/cv.pdf assets/img/cv.png
+          git add assets/cv/en/Ana_Sa_Oliveira_CV.pdf assets/cv/pt/Ana_Sa_Oliveira_CV.pdf assets/img/Ana_Sa_Oliveira_CV.png
 
           if git diff-index --quiet HEAD; then
             echo "No changes to commit"
